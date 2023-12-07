@@ -1,11 +1,21 @@
+var queryString = window.location.search;
+// Crear un objeto URLSearchParams para manipular los parámetros
+var urlParams = new URLSearchParams(queryString);
+// Obtener el valor del parámetro 'gif'
+var gifValue = urlParams.get('gif');
+var songValue = urlParams.get('cancion')
+// Utilizar el valor del parámetro 'gif'
+const gif = document.getElementById('GIF');
 const audio = document.getElementById('audioPlayer');
 const playPauseButton = document.getElementById('playPauseButton');
 const seekBar = document.getElementById('seekBar');
-
+const Descarga = document.getElementById('Descarga');
 
 // Reproduccion 
-
-
+Descarga.setAttribute('href',songValue)
+console.log(Descarga.getAttribute('href'))
+gif.setAttribute('src',gifValue)
+audio.setAttribute('src',songValue)
 let isPlaying = false;
 
 playPauseButton.addEventListener('click', function() {
@@ -33,3 +43,4 @@ seekBar.addEventListener('change', function() {
     const seekTo = audio.duration * (seekBar.value / 100);
     audio.currentTime = seekTo;
 });
+
