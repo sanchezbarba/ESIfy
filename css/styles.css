@@ -196,13 +196,24 @@ body {
 
 .barra-reproduccion{
 	position: fixed;
-	width: 1150px;;
+	width: 1150px;
 	top: 600px;
 	justify-content: center;
 	align-items: center;
 	margin-left: 20px
 
 }
+
+.barra-volumen{
+	position: fixed;
+	width: 150px;
+	top: 565px;
+	justify-content: center;
+	align-items: center;
+	margin-left: 20px
+
+}
+
 .btn-play {
 	width: 5rem;
 	height: 5rem;

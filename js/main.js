@@ -10,6 +10,7 @@ const audio = document.getElementById('audioPlayer');
 const playPauseButton = document.getElementById('playPauseButton');
 const seekBar = document.getElementById('seekBar');
 const Descarga = document.getElementById('Descarga');
+const volumeSlider = document.getElementById('volumeSlider');
 
 // Reproduccion 
 Descarga.setAttribute('href',songValue)
@@ -44,3 +45,6 @@ seekBar.addEventListener('change', function() {
     audio.currentTime = seekTo;
 });
 
+volumeSlider.addEventListener('change', function () {
+    audioPlayer.volume = volumeSlider.value;
+});
