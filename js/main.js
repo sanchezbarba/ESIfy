@@ -48,3 +48,30 @@ seekBar.addEventListener('change', function() {
 volumeSlider.addEventListener('change', function () {
     audioPlayer.volume = volumeSlider.value;
 });
+
+
+var durationElement = document.getElementById("duration");
+
+function initializePlayer() {
+    // La información de duración está disponible, inicializa la interfaz según sea necesario
+    var durationMinutes = Math.floor(audio.duration / 60);
+    var durationSeconds = Math.floor(audio.duration % 60);
+    durationElement.innerText = durationMinutes + ":" + (durationSeconds < 10 ? "0" : "") + durationSeconds;
+}
+
+function updateTime() {
+    var seekPercentage = (audio.currentTime / audio.duration) * 100;
+    seekBar.value = seekPercentage;
+}
+
+var currentTimeElement = document.getElementById("currentTime");
+
+function updateTime() {
+    var seekPercentage = (audio.currentTime / audio.duration) * 100;
+    seekBar.value = seekPercentage;
+
+    // Actualiza el tiempo actual de la canción
+    var currentMinutes = Math.floor(audio.currentTime / 60);
+    var currentSeconds = Math.floor(audio.currentTime % 60);
+    currentTimeElement.innerText = currentMinutes + ":" + (currentSeconds < 10 ? "0" : "") + currentSeconds;
+}
