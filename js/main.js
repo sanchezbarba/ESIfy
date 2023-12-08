@@ -11,13 +11,32 @@ const playPauseButton = document.getElementById('playPauseButton');
 const seekBar = document.getElementById('seekBar');
 const Descarga = document.getElementById('Descarga');
 const volumeSlider = document.getElementById('volumeSlider');
+const iconoVolumen = document.querySelector('.icono-volumen');
 
+ultimoVolumen = 0;
 // Reproduccion 
 Descarga.setAttribute('href',songValue)
 console.log(Descarga.getAttribute('href'))
 gif.setAttribute('src',gifValue)
 audio.setAttribute('src',songValue)
 let isPlaying = false;
+
+
+iconoVolumen.addEventListener('click', function () {
+    // Cambia el valor de la barra de volumen
+    if (audio.volume == 0 && ultimoVolumen != 0) {
+        audio.volume = ultimoVolumen;
+    } else if (ultimoVolumen == 0){
+        audio.volume = 0.75
+        ultimoVolumen = 0.75
+    }
+        else {
+        audio.volume = 0;
+    }
+
+    // Actualiza el valor de la barra de volumen visualmente
+    volumeSlider.value = audio.volume;
+});
 
 playPauseButton.addEventListener('click', function() {
 	const icon = playPauseButton.querySelector('i');
@@ -46,7 +65,8 @@ seekBar.addEventListener('change', function() {
 });
 
 volumeSlider.addEventListener('change', function () {
-    audioPlayer.volume = volumeSlider.value;
+    ultimoVolumen = volumeSlider.value
+    audioPlayer.volume = ultimoVolumen;
 });
 
 
