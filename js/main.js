@@ -36,6 +36,8 @@ iconoVolumen.addEventListener('click', function () {
 
     // Actualiza el valor de la barra de volumen visualmente
     volumeSlider.value = audio.volume;
+
+    cambiarIcono()
 });
 
 playPauseButton.addEventListener('click', function() {
@@ -62,13 +64,21 @@ audio.addEventListener('timeupdate', function() {
 seekBar.addEventListener('change', function() {
     const seekTo = audio.duration * (seekBar.value / 100);
     audio.currentTime = seekTo;
+    
 });
 
 volumeSlider.addEventListener('change', function () {
     ultimoVolumen = volumeSlider.value
     audioPlayer.volume = ultimoVolumen;
+    cambiarIcono()
 });
 
+volumeSlider.addEventListener('change', function () {
+    audio.volume = volumeSlider.value;
+
+    // Cambiar el icono según el valor de la barra de volumen
+    
+});
 
 var durationElement = document.getElementById("duration");
 
@@ -77,11 +87,6 @@ function initializePlayer() {
     var durationMinutes = Math.floor(audio.duration / 60);
     var durationSeconds = Math.floor(audio.duration % 60);
     durationElement.innerText = durationMinutes + ":" + (durationSeconds < 10 ? "0" : "") + durationSeconds;
-}
-
-function updateTime() {
-    var seekPercentage = (audio.currentTime / audio.duration) * 100;
-    seekBar.value = seekPercentage;
 }
 
 var currentTimeElement = document.getElementById("currentTime");
@@ -94,4 +99,14 @@ function updateTime() {
     var currentMinutes = Math.floor(audio.currentTime / 60);
     var currentSeconds = Math.floor(audio.currentTime % 60);
     currentTimeElement.innerText = currentMinutes + ":" + (currentSeconds < 10 ? "0" : "") + currentSeconds;
+}
+
+function cambiarIcono() {
+    if (audio.volume == 0) {
+        iconoVolumen.innerHTML = '<i class="fa-solid fa-volume-off"></i>';
+    } else if (audio.volume < 0.7) {
+        iconoVolumen.innerHTML = '<i class="fa-solid fa-volume-low"></i>';
+    } else {
+        iconoVolumen.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    }
 }
