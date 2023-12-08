@@ -219,9 +219,9 @@ body {
 
 .barra-volumen{
 	position: absolute;
-	width: 130px;
+	width: 8%;
 	top: 73%;
-	right: 15.25%;
+	right: 15%;
 	justify-content: center;
 	align-items: center;
 	margin-left: 20px;
@@ -243,6 +243,24 @@ body {
     position: absolute;
     top: 90%;
     left: 47.5%;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+}
+.btn-next {
+	width: 4rem;
+	height: 4rem;
+	order: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+    background-color: #5f96e8;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 90%;
+    left: 53%;
     transform: translate(50%, -50%);
     cursor: pointer;
 }
@@ -300,4 +318,15 @@ body {
 .icono-volumen i {
     font-size: 1.5rem; /* Ajusta el tamaño del icono según sea necesario */
     color: #121212; /* Cambia el color del icono si es necesario */
+}
+
+.song-title{
+	position: absolute;
+	width: 72%;
+	top: 72.5%;
+	left: 11.5%;
+	justify-content: center;
+	align-items: center;
+	margin-left: 20px
+
 }
