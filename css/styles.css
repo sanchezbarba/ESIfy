@@ -96,12 +96,14 @@ body {
 /*         CONTENIDO PRINCIPAL        */
 /* ********************************** */
 .main-content {
-	grid-row: 1/3;
 	grid-column: 2/-1;
-
+	margin-bottom: 0%;
 	background-color: #8abcf1;
-	padding: 2.5rem;
-	height: 100vh;
+	padding-top: 3rem;
+	padding-left: 3rem;
+	padding-right: 3rem;
+	padding-bottom: 30.9rem;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
