@@ -95,12 +95,12 @@ volumeSlider.addEventListener('change', function () {
     cambiarIcono()
 });
 
-volumeSlider.addEventListener('change', function () {
-    audio.volume = volumeSlider.value;
+// volumeSlider.addEventListener('change', function () {
+//     audio.volume = volumeSlider.value;
 
-    // Cambiar el icono según el valor de la barra de volumen
+//     // Cambiar el icono según el valor de la barra de volumen
     
-});
+// });
 
 var durationElement = document.getElementById("duration");
 
@@ -140,7 +140,9 @@ Nextbutton.addEventListener('click',function(){
     if(posicion==11){
         posicion=0;
         gif.setAttribute('src', Canciones[0][0]);
-        audio.setAttribute('src', Canciones[0][1]);        
+        audio.setAttribute('src', Canciones[0][1]);
+        Descarga.setAttribute('href',Canciones[posicion][1]);
+
         audio.duration = 0;
         isPlaying = false;
         icon.classList.remove('fa-pause');
@@ -152,6 +154,8 @@ Nextbutton.addEventListener('click',function(){
         posicion++;
         gif.setAttribute('src', Canciones[posicion][0]);
         audio.setAttribute('src', Canciones[posicion][1]);
+        Descarga.setAttribute('href',Canciones[posicion][1]);
+
         audio.duration = 0;
         isPlaying = false;
         icon.classList.remove('fa-pause');
@@ -168,7 +172,8 @@ PreviousButton.addEventListener('click',function(){
     if(posicion==0){
         posicion=11;
         gif.setAttribute('src', Canciones[11][0]);
-        audio.setAttribute('src', Canciones[11][1]);        
+        audio.setAttribute('src', Canciones[11][1]);  
+        Descarga.setAttribute('href',Canciones[11][1]);    
         audio.duration = 0;
         isPlaying = false;
         icon.classList.remove('fa-pause');
@@ -180,6 +185,7 @@ PreviousButton.addEventListener('click',function(){
         posicion--;
         gif.setAttribute('src', Canciones[posicion][0]);
         audio.setAttribute('src', Canciones[posicion][1]);
+        Descarga.setAttribute('href',Canciones[posicion][1]);
         audio.duration = 0;
         isPlaying = false;
         icon.classList.remove('fa-pause');

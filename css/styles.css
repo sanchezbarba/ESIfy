@@ -132,6 +132,11 @@ body {
 	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 	gap: 2.4rem;
 }
+.container-card-videos {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 43.5%);
+	gap: 2.4rem;
+}
 
 .card-canciones{
 	width: 15rem; /* Ancho fijo para cada tarjeta */
@@ -144,10 +149,24 @@ body {
 	cursor: pointer;
 	position: relative;
 }
-
 .card-canciones:hover{
 	background-color: #7bb2f7;
 }
+.card-videos{
+	width: 40%; /* Ancho fijo para cada tarjeta */
+    height: 100%; /* Alto fijo para cada tarjeta */
+	background-color: #509bf5;
+	border-radius: 0.5rem;
+	padding: 1.6rem;
+	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+	position: relative;
+}
+.card-videos:hover{
+	background-color: #7bb2f7;
+}
+
 
 .card-img img {
 	width: 100%;
@@ -297,6 +316,18 @@ body {
 	margin-left: 20px;
 	
 }
+.mp4{
+	left:11.5%;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 72%;
+	height: 63%;
+	top: 3%;
+	margin-left: 20px;
+}
+
 .btn-play .fa-pause {
     /* Asegúrate de que el icono tenga el mismo tamaño que el de reproducción */
     font-size: 2.5rem; /* Ajusta el tamaño del icono según sea necesario */
