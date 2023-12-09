@@ -25,7 +25,7 @@ const Canciones = [
     ["../img/GIFS/Schubert.gif","../Canciones/Schubert.mp3","Schuber Stabat Mater in F Minor"],
     ["../img/GIFS/Chopin.gif","../Canciones/Chopin.mp3","Etude in C Mayor, Op 10 No:1"],
     ["../img/GIFS/Concertino.gif","../Canciones/Concertino.mp3","Guitar Concertion in A Minor"],
-    ["../img/GIFS/Columbia.gif","cancion=../Canciones/Columbia.mp3","Columbia"],
+    ["../img/GIFS/Columbia.gif","../Canciones/Columbia.mp3","Columbia"],
     ["../img/GIFS/Primavera.gif","../Canciones/Primavera.mp3","La primavera"],
     ["../img/GIFS/Shakira.gif","../Canciones/Shakira.mp3","Shakira bzrp music sessions"],
     ["../img/GIFS/Supernova.gif","../Canciones/Supernova.mp3","Supernova"],
