@@ -264,6 +264,27 @@ body {
     transform: translate(50%, -50%);
     cursor: pointer;
 }
+.btn-previous{
+	
+	width: 4rem;
+	height: 4rem;
+	order: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+    background-color: #5f96e8;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 90%;
+    left: 43.5%;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+
+}
+
 .gif{
 	left:11.5%;
 	position: absolute;

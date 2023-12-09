@@ -25,7 +25,7 @@ const Canciones = [
     ["../img/GIFS/Schubert.gif","../Canciones/Schubert.mp3","Schuber Stabat Mater in F Minor"],
     ["../img/GIFS/Chopin.gif","../Canciones/Chopin.mp3","Etude in C Mayor, Op 10 No:1"],
     ["../img/GIFS/Concertino.gif","../Canciones/Concertino.mp3","Guitar Concertion in A Minor"],
-    ["../img/GIFS/Columbia.gif","cancion=../Canciones/Columbia.mp3","Columbia"],
+    ["../img/GIFS/Columbia.gif","../Canciones/Columbia.mp3","Columbia"],
     ["../img/GIFS/Primavera.gif","../Canciones/Primavera.mp3","La primavera"],
     ["../img/GIFS/Shakira.gif","../Canciones/Shakira.mp3","Shakira bzrp music sessions"],
     ["../img/GIFS/Supernova.gif","../Canciones/Supernova.mp3","Supernova"],
@@ -137,24 +137,58 @@ const Nextbutton = document.getElementById('NextButton');
 
 Nextbutton.addEventListener('click',function(){
     const icon = playPauseButton.querySelector('i');
-    if (posicion < Canciones.length - 1) {
-        // Incrementar la posición para reproducir la siguiente canción
-        posicion++;
+    if(posicion==11){
+        posicion=0;
+        gif.setAttribute('src', Canciones[0][0]);
+        audio.setAttribute('src', Canciones[0][1]);        
+        audio.duration = 0;
+        isPlaying = false;
+        icon.classList.remove('fa-pause');
+		icon.classList.add('fa-play');
+        songTitleElement.innerText = Canciones[0][2];
         seekBar.value = 0;
-        console.log(seekBar.value);
-        // Establecer los atributos src con la información de la próxima canción
+    }
+    else{
+        posicion++;
         gif.setAttribute('src', Canciones[posicion][0]);
         audio.setAttribute('src', Canciones[posicion][1]);
-        // Reproducir automáticamente la siguiente canción
-        
         audio.duration = 0;
         isPlaying = false;
         icon.classList.remove('fa-pause');
 		icon.classList.add('fa-play');
         songTitleElement.innerText = Canciones[posicion][2];
+        seekBar.value = 0; 
+    }
 
-        // Actualizar la barra de reproducción
+});
+
+const PreviousButton = document.getElementById('PreviousButton');
+PreviousButton.addEventListener('click',function(){
+    const icon = playPauseButton.querySelector('i');
+    if(posicion==0){
+        posicion=11;
+        gif.setAttribute('src', Canciones[11][0]);
+        audio.setAttribute('src', Canciones[11][1]);        
+        audio.duration = 0;
+        isPlaying = false;
+        icon.classList.remove('fa-pause');
+		icon.classList.add('fa-play');
+        songTitleElement.innerText = Canciones[11][2];
+        seekBar.value = 0;
+    }
+    else {
+        posicion--;
+        gif.setAttribute('src', Canciones[posicion][0]);
+        audio.setAttribute('src', Canciones[posicion][1]);
+        audio.duration = 0;
+        isPlaying = false;
+        icon.classList.remove('fa-pause');
+		icon.classList.add('fa-play');
+        songTitleElement.innerText = Canciones[posicion][2];
+        seekBar.value = 0;
         
     }
+
 });
+
 
